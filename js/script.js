@@ -11,31 +11,31 @@
 var carousel = document.querySelector('.carousel');
 var entries = [{
 	artist: 'https://www.instagram.com/ankitmehrasb',
-	entry: 'assets/entries/ankit.png'
+	entry: './assets/entries/ankit.png'
 }, {
 	artist: 'https://www.instagram.com/tanishijain_art',
-	entry: 'assets/entries/tanishi.png'
+	entry: './assets/entries/tanishi.png'
 }, {
 	artist: 'https://www.instagram.com/anishathampy',
-	entry: 'assets/entries/anisha.mov'
+	entry: './assets/entries/anisha.mov'
 },{
 	artist: 'https://www.instagram.com/anishathampy',
-	entry: 'assets/entries/anisha.m4v'
+	entry: './assets/entries/anisha.m4v'
 }, {
 	artist: 'https://www.instagram.com/enchaussettes',
-	entry: 'assets/entries/enchaussettes.png'
+	entry: './assets/entries/enchaussettes.png'
 }, {
 	artist: 'Abhinanda Lahiri',
-	entry: 'assets/entries/avhinanda1.png'
+	entry: './assets/entries/avhinanda1.png'
 },{
 	artist: 'Abhinanda Lahiri',
-	entry: 'assets/entries/avhinanda2.png'
+	entry: './assets/entries/avhinanda2.png'
 },{
 	artist: 'https://www.instagram.com/samarthishere',
-	entry: 'assets/entries/giraffe.jpg'
+	entry: './assets/entries/giraffe.jpg'
 },{
 	artist: 'https://www.instagram.com/samarthishere',
-	entry: 'assets/entries/pangolin.png'
+	entry: './assets/entries/pangolin.png'
 }];
 
 var videoFormats = ['mov', 'm4v', 'mp4'];
