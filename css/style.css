@@ -173,7 +173,7 @@ html, body {
   right: initial;
   top: initial;
   left: 0.5rem;
-  bottom: calc(20vh + 1rem);
+  bottom: 0.5rem;
   text-decoration: none;
   color: #232323;
 }
@@ -194,8 +194,8 @@ html, body {
 }
 
 .carousel {
-  width: 100%;
-  height: 20vh;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   bottom: 0.5rem;
   left: 0;
@@ -203,7 +203,8 @@ html, body {
 }
 
 .media {
-  height: 20vh;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: contain;
+  visibility: hidden;
 }
