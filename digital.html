@@ -10,7 +10,13 @@
 	<title>#FacePaintChallenge</title>
 </head>
 
-<body>
+<body class="ar">
+	<div class="gallery-types">
+		<input type="radio" name="type" value="ar" id="ar" checked/>
+		<label for="ar">AR</label>
+		<input type="radio" name="type" value="photos" id="photos"/>
+		<label for="photos">Photos</label>
+	</div>
 	<video muted id="webcam" class="visible"></video>
 	<div id="background"></div>
 	<canvas id="faceCanvas" tabindex="1"></canvas>
@@ -52,6 +58,8 @@
     <span>ankitmehrasb</span>
   </a>
 	<div class="carousel">
+	</div>
+	<div class="photo-carousel">
 	</div>
 	<script src="./lib/triangulation.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>

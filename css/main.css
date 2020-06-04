@@ -1,0 +1,223 @@
+/* Stage- Bootstrap one page Event ticket booking theme 
+Created by pixpalette.com - online design magazine */
+
+@charset "utf-8";
+/* CSS Document */
+html,
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  overflow-x: hidden;
+  color: #efefef;
+  background-color: rgba(000,000,000,0.8);
+}
+
+/* common style's */
+a {
+  color: #7447ae;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 24px;
+  color: #666;
+}
+
+h6 {
+  color: #999;
+}
+
+/* button style */
+.btn,
+.btn.disabled {
+  background: #ffb13f;
+  color: #ffffff !important;
+  border: 0;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px 30px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #ffb13f;
+  color: #ffffff;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  opacity: 0.5;
+}
+
+.left-wrapper,
+.right-wrapper {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* event banner css */
+.event-banner-wrapper {
+  position: fixed;
+  width: 41.66666667%;
+  font-weight: 800;
+  height: 100%;
+  padding: 20px;
+  background: url(https://cdn.glitch.com/7d2fee97-4835-4da4-98b9-bd89278218ed%2FSocial-media-post%20-FPChallenge.png?v=1591261535900);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+.event-banner-wrapper h1 {
+  font-size: 3.5vw;
+  font-weight: 900;
+  line-height: 4.5vw;
+  color: #ffb13f;
+  margin-top: 5vh;
+}
+.event-banner-wrapper h2 {
+  font-size: 2.5vw;
+  font-weight: 900;
+  line-height: 3.5vw;
+  color: #ffffff;
+  position: absolute;
+  bottom: 1vw;
+  width: 100%;
+}
+.event-banner-wrapper p {
+  font-size: 1vw;
+  font-weight: 400;
+  line-height: 1vw;
+  color: #ffffff;
+  position: absolute;
+  bottom: 8vw;
+  width: 100%;
+}
+/* event ticket css */
+.event-wrapper {
+  padding: 40px;
+}
+
+.yellow-underline span {
+  border-bottom: 10px solid #ffb13f;
+}
+
+/* Image Gallery */
+.flex-column {
+  max-width: 260px;
+}
+
+img {
+  margin: 5px;
+}
+
+.scale {
+  transform: scaleY(1.05);
+  padding-top: 5px;
+}
+
+/* media query for tab */
+@media (max-width: 767px) {
+  .event-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+  }
+  
+  .event-banner-wrapper h1 {
+    font-size: 1.75rem;
+  }
+
+  .event-banner-wrapper h2 {
+    font-size: 1.5rem;
+    line-height: 38px;
+  }
+
+  .event-banner-wrapper h2 span {
+    font-size: 16px;
+  }
+
+  .event-wrapper {
+    padding: 20px;
+  }
+
+  .event-tab .nav-tabs {
+    margin-bottom: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .event-tab .tab-content {
+    margin-top: 20px;
+  }
+}
+
+/* media query for Mobile */
+@media (max-width: 480px) {
+  .event-tab .nav-tabs > li > a {
+    font-size: 16px;
+    margin-right: 0;
+    padding: 2px 0px;
+  }
+
+  .event-tab .nav-tabs > li {
+    width: 100%;
+  }
+}
+
+.event-banner-wrapper > h2 {
+  font-size: 1.75rem;
+}
+
+#about {
+  padding: 0.5rem;
+}
+
+a.btn.btn-lg {
+    background-color: rgb(242, 171, 0);
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    box-shadow: none;
+}
+
+a.btn.btn-lg:hover,
+a.btn.btn-lg:active {
+  color: #fff;
+  background-color: rgb(222, 151, 0);
+}
