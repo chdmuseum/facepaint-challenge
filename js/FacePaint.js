@@ -92,7 +92,6 @@ class FacePaint {
 	}
   
   async updateTexture(url, isVideo) {
-		// const url = URL.createObjectURL(file);
 		let texture;
 		if(this._video) {
 			this._video.pause();
@@ -106,7 +105,6 @@ class FacePaint {
 		} else {
 			texture = await this._textureLoader.loadAsync(url);	
 		}
-		console.log(texture);
 		
 		this._material.map = texture;
 	}

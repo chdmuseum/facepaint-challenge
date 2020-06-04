@@ -1,40 +1,38 @@
-// https://www.pexels.com/video/scenic-view-of-landscape-2360941/
-// https://www.pexels.com/video/a-hill-of-waste-materials-3186590/
-
-// https://www.pexels.com/video/a-diver-diving-under-the-sea-water-3993112/
-
-// https://www.pexels.com/video/clown-fish-hiding-on-sea-anemone-4029955/
-// https://www.pexels.com/video/baby-elephants-playing-in-the-mud-3196505/
-// https://mixkit.co/free-stock-video/elephant-drinking-water-with-its-trunk-3659/
-// https://www.pexels.com/video/heavy-equipment-in-a-junk-yard-2430838/
-// (function() {
+(function() {
 var carousel = document.querySelector('.carousel');
 var entries = [{
-	artist: 'https://www.instagram.com/ankitmehrasb',
+  handle: 'ankitmehrasb',
+	url: 'https://www.instagram.com/ankitmehrasb',
 	entry: './assets/entries/ankit.png'
 }, {
-	artist: 'https://www.instagram.com/tanishijain_art',
+  handle: 'tanishijain_art',
+	url: 'https://www.instagram.com/tanishijain_art',
 	entry: './assets/entries/tanishi.png'
 }, {
-	artist: 'https://www.instagram.com/anishathampy',
+  handle: 'anishathampy',
+	url: 'https://www.instagram.com/anishathampy',
 	entry: './assets/entries/anisha.mov'
 },{
-	artist: 'https://www.instagram.com/anishathampy',
+  handle: 'anishathampy',
+	url: 'https://www.instagram.com/anishathampy',
 	entry: './assets/entries/anisha.m4v'
 }, {
-	artist: 'https://www.instagram.com/enchaussettes',
+  handle: 'enchaussettes',
+	url: 'https://www.instagram.com/enchaussettes',
 	entry: './assets/entries/enchaussettes.png'
 }, {
-	artist: 'Abhinanda Lahiri',
+	handle: 'abhinanda_lahiri',
 	entry: './assets/entries/avhinanda1.png'
 },{
-	artist: 'Abhinanda Lahiri',
+	handle: 'abhinanda_lahiri',
 	entry: './assets/entries/avhinanda2.png'
 },{
-	artist: 'https://www.instagram.com/samarthishere',
+  handle: 'samarthishere',
+	url: 'https://www.instagram.com/samarthishere',
 	entry: './assets/entries/giraffe.jpg'
 },{
-	artist: 'https://www.instagram.com/samarthishere',
+  handle: 'samarthishere',
+	url: 'https://www.instagram.com/samarthishere',
 	entry: './assets/entries/pangolin.png'
 }];
 
@@ -45,7 +43,7 @@ var assets = [];
 for (var i = 0; i < entries.length; i++) {
 	var obj = entries[i];
 	var el;
-	if (videoFormats.indexOf(obj.entry.split('.')[1]) > -1) {
+	if (videoFormats.indexOf(obj.entry.split('.')[2]) > -1) {
     el = document.createElement('video');
     el.setAttribute('playsinline', true);
     el.setAttribute('loop', true);
@@ -63,8 +61,7 @@ for (var i = 0; i < entries.length; i++) {
 	}
 	el.src = obj.entry;
 	el.classList.add('media');
-  el.dataset.artist = obj.artist;
-  
+  el.setAttribute('id', obj.handle)
 	carousel.appendChild(el);
 }
 
@@ -75,20 +72,20 @@ var flkty = new Flickity(carousel, {
   friction: 0.8,
 	wrapAround: true
 });
-flkty.on('change', function (index) {
+function updateTexture(index) {
   var url = entries[index].entry;
-  var isVideo = videoFormats.indexOf(url.split('.')[1]) > -1;
+  var isVideo = videoFormats.indexOf(url.split('.')[2]) > -1;
   faceCanvas.updateTexture(url, isVideo);
-  if(entries[index].artist.startsWith('http')) {
+  if('url' in entries[index]) {
     artist.style.pointerEvents = 'all';
-    artist.href = entries[index].artist;
-    artistLabel.textContent = entries[index].artist.split('.com/')[1];
+    artist.href = entries[index].url;
   } else {
     artist.style.pointerEvents = 'none';
-    artistLabel.textContent = entries[index].artist;
+    artist.href = '#';
   }
-});
-
+  artistLabel.textContent = entries[index].handle;
+}
+flkty.on('change', updateTexture);
 const toggleBtn = document.querySelector('#visibilityToggle');
 const toggleBtnLabel = document.querySelector('#visibilityToggle > span');
 
@@ -115,17 +112,16 @@ async function renderPredictions(t) {
 	const predictions = await model.estimateFaces(webcam);
 
 	if (predictions.length > 0) {
-		// var positionBufferData = TRIANGULATION.reduce((acc, val) => acc.concat(predictions[0].scaledMesh[val]), []);
 		const positionBufferData = predictions[0].scaledMesh.reduce((acc, pos) => acc.concat(pos), []);
 		if (!faceCanvas) {
 			const props = {
 				id: 'faceCanvas',
-				// https://www.freepik.com/free-vector/colorful-background-holi-festival_1051050.htm
 				textureFilePath: entries[0].entry,
 				w,
 				h
-			}
-			faceCanvas = new FacePaint(props);
+      }
+      faceCanvas = new FacePaint(props);
+      updateTexture(flkty.selectedIndex);
 			document.querySelector('#loader').style.display = 'none';
 			return;
 		}
@@ -172,4 +168,4 @@ async function main() {
 	}
 }
 main();
-// })();
+})();
