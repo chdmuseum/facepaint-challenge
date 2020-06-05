@@ -54,7 +54,7 @@
 	}, {
 		handle: 'samarthishere',
 		url: 'https://www.instagram.com/samarthishere',
-		entry: './assets/entries/digital/pangolin.png'
+		entry: './assets/entries/digital/wed.mp4'
 	}];
 
 	var videoFormats = ['mov', 'm4v', 'mp4'];
